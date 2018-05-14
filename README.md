@@ -3,6 +3,29 @@
 In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
 
 
+# Project description 
+
+This project uses the Jasmine behavior-driven development framework (https://jasmine.github.io/). It allows developers to test the JavaScript code, defining test suites and expectations. 
+
+In this project, we test a feedreader using the Google Feed Reader API to grab RSS feeds as JSON object we can make use of. It also uses the Handlebars templating library and jQuery.
+
+I also added the Jasmine-jQuery library to use some useful matchers within my specs.
+
+
+# How to run this project
+
+All of our tests are written in the /feedreader.js file. This is the file that Jasmine will read to perform the tests against our /app.js code.
+
+Simply open the index.html file in your browser.
+
+When the page is loaded in the browser, the feeds we are looking for will be loaded.
+
+At the bottom of the web-page will appear a kind of footer called Jasmine. This element will highlight the name of the suites (in black) and the tests (in green, with our expectations), we implement against some of the elements and behaviors of our feed reader.
+
+The jasmin reporter will show if all of our tests passed or if some of them failed : 
+    - the green color (and the green dots) will point out that each test passed.
+    - If a red banner appears, or if some red dots are present; some of our tests failed. The test that failed will have its spec line red. We can click on the link to show what went rong.
+
 ## Why this Project?
 
 Testing is an important part of the development process and many organizations practice a standard of development known as "test-driven development". This is when developers write tests first, before they ever start developing their application. All the tests initially fail and then they start writing application code to make these tests pass.
