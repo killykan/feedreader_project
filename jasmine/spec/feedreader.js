@@ -90,8 +90,7 @@ $(function() {
               
         beforeEach(function(done){                /*We need to load the asynchronous function*/
             loadFeed(0, function(){           /*before we run our test, and wait for it to be 'fully' executed*/
-                
-                done();                         
+            done();                         
             });
         });
 
@@ -100,8 +99,8 @@ $(function() {
          * a single .entry element within the .feed container.*/
         
         it('should have at least one non empty entry', function(done){
-            
             var feedEntry = $('.feed').find('.entry');
+
             expect(feedEntry).not.toHaveLength(0);
             done();
         });
@@ -109,7 +108,7 @@ $(function() {
         /* This test will ensure each feeds' titles are different when the loadfeed() function is loaded*/
 
         it('should have non empty and different titles', function(){
-            var entryTitle = $(".entry h2");
+            var entryTitle = $(".feed").find("h2");
 
             entryTitle.each(function(index){                            
             expect($(this).text().length).not.toHaveLength(0);   
