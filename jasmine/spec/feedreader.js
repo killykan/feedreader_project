@@ -86,9 +86,11 @@ $(function() {
     /*Third test suite. This suite will focus on the feed entries */
     /*Note that the loadfeed() function is asynchronous.*/
 
-    describe('Initial Entries', function(){       
+    describe('Initial Entries', function(){
+              
         beforeEach(function(done){                /*We need to load the asynchronous function*/
             loadFeed(0, function(){           /*before we run our test, and wait for it to be 'fully' executed*/
+                
                 done();                         
             });
         });
@@ -96,11 +98,12 @@ $(function() {
         /* This test ensures that when the loadFeed
          * function is called and has completed its work that there is at least
          * a single .entry element within the .feed container.*/
-    
-        it('should have at least one non empty entry', function(){
-            var feedEntry = $(".feed.entry").length;
-
-            expect(feedEntry).toBeGreaterThan(0);
+        
+        it('should have at least one non empty entry', function(done){
+            
+            var feedEntry = $('.feed').find('.entry');
+            expect(feedEntry).not.toHaveLength(0);
+            done();
         });
 
         /* This test will ensure each feeds' titles are different when the loadfeed() function is loaded*/
