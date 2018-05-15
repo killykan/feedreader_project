@@ -35,7 +35,7 @@ $(function() {
         it('should have correct url defined', function(){
             allFeeds.forEach(function(item){
                 expect(item.url).toBeDefined();
-                expect(item.url.length).toBeGreaterThan(10);
+                expect(item.url.length).not.toBe(0);
             });
          });
 
@@ -98,9 +98,9 @@ $(function() {
          * a single .entry element within the .feed container.*/
     
         it('should have at least one non empty entry', function(){
-            var feedEntry = $(".entry");
+            var feedEntry = $(".feed.entry").length;
 
-            expect(feedEntry).not.toHaveLength(0);
+            expect(feedEntry).toBeGreaterThan(0);
         });
 
         /* This test will ensure each feeds' titles are different when the loadfeed() function is loaded*/
